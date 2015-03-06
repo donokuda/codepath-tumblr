@@ -10,7 +10,8 @@
 		3FE82AAD1D0FD0E482076F97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EE5B294A958CE9618F51D5 /* Images.xcassets */; };
 		70731E1D4D69773C9DA5C01F /* Main.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = B6F3BE18E92D64E83457926A /* Main.storyboard */; };
 		84232D94D01BE7190E61A809 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3732824E634870D28BC494 /* Foundation.framework */; };
-		CB758EC654703DECEB4F7769 /* LaunchScreen.xib in Sources */ = {isa = PBXBuildFile; fileRef = 721DC0F82E0021D20910A7A9 /* LaunchScreen.xib */; };
+		B0577BFD1AAA73E800B61496 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0577BFC1AAA73E800B61496 /* TabBarViewController.swift */; };
+		B0577BFF1AAA756B00B61496 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0577BFE1AAA756B00B61496 /* HomeViewController.swift */; };
 		F2AA7B95931C7099C2A013CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CD9829FEF48C7C30C37E4A /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +30,10 @@
 		250516B0E6758D0833AC53BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		388C9F8EB5212A5FE1CE96C8 /* UnitTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UnitTests-Info.plist"; sourceTree = "<group>"; };
 		38CD9829FEF48C7C30C37E4A /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		721DC0F82E0021D20910A7A9 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		7BF03FBD2EF441405DA38DF6 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C3732824E634870D28BC494 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B0577BFC1AAA73E800B61496 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewControllers/TabBarViewController.swift; sourceTree = "<group>"; };
+		B0577BFE1AAA756B00B61496 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		B6F3BE18E92D64E83457926A /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		C66D262897DDBEF18673BE04 /* tumblr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tumblr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,7 +114,6 @@
 		575C9F3C1097B671284C39F3 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				721DC0F82E0021D20910A7A9 /* LaunchScreen.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -138,9 +139,19 @@
 			tabWidth = 4;
 			usesTabs = 0;
 		};
+		B0577BFB1AAA73D400B61496 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B0577BFC1AAA73E800B61496 /* TabBarViewController.swift */,
+				B0577BFE1AAA756B00B61496 /* HomeViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B84D80A9028798792186EF89 /* tumblr */ = {
 			isa = PBXGroup;
 			children = (
+				B0577BFB1AAA73D400B61496 /* ViewControllers */,
 				1ED38517E12D1F102FC4AD4D /* Extensions */,
 				F0C7965352F26FF872644A08 /* Protocols */,
 				C36C2EF4D728139B8A010AF9 /* Models */,
@@ -332,8 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2AA7B95931C7099C2A013CE /* AppDelegate.swift in Sources */,
+				B0577BFD1AAA73E800B61496 /* TabBarViewController.swift in Sources */,
 				70731E1D4D69773C9DA5C01F /* Main.storyboard in Sources */,
-				CB758EC654703DECEB4F7769 /* LaunchScreen.xib in Sources */,
+				B0577BFF1AAA756B00B61496 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				COPY_PHASE_STRIP = YES;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -450,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
