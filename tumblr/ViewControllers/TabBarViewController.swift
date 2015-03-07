@@ -12,26 +12,71 @@ class TabBarViewController: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
 
+    var homeViewController: UIViewController!
+    var searchViewController: UIViewController!
+    var composeViewController: UIViewController!
+    var accountViewController: UIViewController!
+    var trendingViewController: UIViewController!
+
+    var viewControllers: [UIViewController] = [UIViewController]()
+
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var composeButton: UIButton!
+    @IBOutlet weak var accountButton: UIButton!
+    @IBOutlet weak var trendingButton: UIButton!
+    @IBOutlet weak var customTabBar: UIView!
+
+    lazy var buttons: [UIButton] = {
+        var tempButton: [UIButton] = []
+        for view: AnyObject in self.customTabBar.subviews {
+            if view is UIButton {
+                tempButton.append(view as UIButton)
+            }
+        }
+
+        return tempButton
+    }()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeStory") as UIViewController
+        composeViewController = storyboard.instantiateViewControllerWithIdentifier("composeStory") as UIViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountStory") as UIViewController
+        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingStory") as UIViewController
+        searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchStory") as UIViewController
+
+        viewControllers = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
+
+        contentView.addSubview(searchViewController.view)
+        searchViewController.didMoveToParentViewController(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    @IBAction func didTapNavigationButton(sender: UIButton) {
+        deselectAllButtons()
+        sender.selected = true
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        var viewController = viewControllers[sender.tag]
+        addViewController(viewController)
     }
-    */
 
+    func addViewController(targetViewController: UIViewController) {
+        println(targetViewController)
+        contentView.addSubview(targetViewController.view)
+        targetViewController.didMoveToParentViewController(self)
+    }
+
+    func deselectAllButtons() {
+        for button in buttons {
+            button.selected = false
+        }
+    }
 }
