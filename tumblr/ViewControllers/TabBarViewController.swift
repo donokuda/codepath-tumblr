@@ -19,6 +19,17 @@ class TabBarViewController: UIViewController {
     var trendingViewController: UIViewController!
 
     var viewControllers: [UIViewController] = [UIViewController]()
+    var activeViewController: UIViewController? {
+        didSet {
+            if let oldViewController = oldValue {
+                removeViewController(oldViewController)
+            }
+
+            if let newViewController = activeViewController {
+                addViewController(newViewController)
+            }
+        }
+    }
 
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
@@ -52,8 +63,7 @@ class TabBarViewController: UIViewController {
 
         viewControllers = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
 
-        contentView.addSubview(searchViewController.view)
-        searchViewController.didMoveToParentViewController(self)
+        activeViewController = homeViewController
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,8 +78,19 @@ class TabBarViewController: UIViewController {
         addViewController(viewController)
     }
 
+    func removeViewController(viewController: UIViewController) {
+        // tell the child it will be removed (moved to no parent)
+        viewController.willMoveToParentViewController(nil)
+
+        // have the childivew remove itself from its parent
+        viewController.view.removeFromSuperview()
+
+        // now remove the child view controller from its parent
+        viewController.removeFromParentViewController()
+    }
+
     func addViewController(targetViewController: UIViewController) {
-        println(targetViewController)
+        self.addChildViewController(targetViewController)
         contentView.addSubview(targetViewController.view)
         targetViewController.didMoveToParentViewController(self)
     }
