@@ -78,6 +78,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.19495249029522171" green="0.25911680724872355" blue="0.3539651207890071" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="explore_popup" id="jPo-B2-GQw">
+                                <rect key="frame" x="0.0" y="465" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -86,6 +90,7 @@
                         <outlet property="composeButton" destination="iyg-7g-4k0" id="JiM-2M-vAg"/>
                         <outlet property="contentView" destination="U7S-M6-I0P" id="MUq-DZ-uyh"/>
                         <outlet property="customTabBar" destination="ptn-hd-Qvu" id="XTy-uO-hJC"/>
+                        <outlet property="explorePopup" destination="jPo-B2-GQw" id="pkl-Ac-Qwl"/>
                         <outlet property="homeButton" destination="c8S-wC-XaZ" id="BPb-vd-vlI"/>
                         <outlet property="searchButton" destination="tsl-1u-J9e" id="ji3-3P-mwT"/>
                         <outlet property="trendingButton" destination="L2u-h0-uHL" id="Cey-nO-tpg"/>
@@ -288,6 +293,7 @@
         <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
+        <image name="explore_popup" width="185" height="77"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>

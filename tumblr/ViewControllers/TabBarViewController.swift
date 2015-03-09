@@ -18,6 +18,7 @@ class TabBarViewController: UIViewController,
     UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var explorePopup: UIImageView!
 
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
@@ -76,7 +77,12 @@ class TabBarViewController: UIViewController,
 
         viewControllers = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
 
+        homeButton.selected = true
         activeViewController = homeViewController
+
+        UIView.animateWithDuration(1, delay: 0, options: (UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse), animations: { () -> Void in
+            self.explorePopup.frame.origin.y -= 10
+        }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,7 +91,14 @@ class TabBarViewController: UIViewController,
 
     @IBAction func didTapNavigationButton(sender: UIButton) {
         deselectAllButtons()
+        sender.selected = true
         activeViewController = viewControllers[sender.tag]
+
+        if activeViewController == searchViewController {
+            explorePopup.hidden = true
+        } else {
+            explorePopup.hidden = false
+        }
     }
 
     func removeViewController(viewController: UIViewController) {
