@@ -10,26 +10,54 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var photoButton: UIButton!
+    @IBOutlet weak var quoteButton: UIButton!
+    @IBOutlet weak var linkButton: UIButton!
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var videoButton: UIButton!
+
+    var buttons: [UIButton] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        buttons = [textButton, quoteButton, photoButton, linkButton, videoButton, chatButton]
+
+        for button in buttons {
+            button.frame.origin.y += view.frame.height
+        }
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        var delay = 0.0
+
+        for button in buttons {
+            UIView.animateWithDuration(1.0, delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1, options: nil, animations: {
+                button.frame.origin.y -= self.view.frame.height
+            }, completion: nil)
+
+            delay += 0.04
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    @IBAction func didTapDismiss(sender: AnyObject) {
+        var delay = 0.0
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        for button in buttons {
+            UIView.animateWithDuration(1.0, delay: delay, usingSpringWithDamping: 0.75, initialSpringVelocity: 1, options: nil, animations: {
+                button.frame.origin.y -= self.view.frame.height
+
+                if button == self.buttons.last {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }, completion: nil)
+
+            delay += 0.04
+        }
     }
-    */
-
 }

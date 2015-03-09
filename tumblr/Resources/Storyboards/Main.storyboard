@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zg7-hd-ESE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zg7-hd-ESE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -8,23 +8,22 @@
         <scene sceneID="aoQ-tw-whR">
             <objects>
                 <viewController id="zg7-hd-ESE" customClass="TabBarViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ohv-5q-yhk"/>
-                        <viewControllerLayoutGuide type="bottom" id="RFN-9m-UK8"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GON-81-jLE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7S-M6-I0P">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" id="U7S-M6-I0P">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ptn-hd-Qvu">
+                            <view contentMode="scaleToFill" id="ptn-hd-Qvu">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2u-h0-uHL">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="L2u-h0-uHL">
                                         <rect key="frame" x="265" y="5" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="trending_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -33,8 +32,9 @@
                                             <action selector="didTapNavigationButton:" destination="zg7-hd-ESE" eventType="touchUpInside" id="pmM-VF-Lq8"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8S-wC-XaZ">
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="c8S-wC-XaZ">
                                         <rect key="frame" x="19" y="4" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="home_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -43,8 +43,9 @@
                                             <action selector="didTapNavigationButton:" destination="zg7-hd-ESE" eventType="touchUpInside" id="n6L-Ur-Vby"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsl-1u-J9e">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="tsl-1u-J9e">
                                         <rect key="frame" x="75" y="4" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="search_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -53,17 +54,19 @@
                                             <action selector="didTapNavigationButton:" destination="zg7-hd-ESE" eventType="touchUpInside" id="gcZ-lk-Wam"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyg-7g-4k0">
+                                    <button opaque="NO" tag="2" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iyg-7g-4k0">
                                         <rect key="frame" x="131" y="5" width="58" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="compose_button">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="didTapNavigationButton:" destination="zg7-hd-ESE" eventType="touchUpInside" id="jJm-gd-VFi"/>
+                                            <segue destination="CnG-A6-QRm" kind="modal" id="m4D-88-gg9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkq-j8-rWV">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="Hkq-j8-rWV">
                                         <rect key="frame" x="210" y="5" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="account_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -96,22 +99,21 @@
         <scene sceneID="f6n-ez-xcQ">
             <objects>
                 <viewController storyboardIdentifier="homeStory" id="ZSg-1b-t3h" customClass="HomeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GNS-AL-LE9"/>
-                        <viewControllerLayoutGuide type="bottom" id="k2O-Xt-uFs"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hVx-et-KGL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="d8K-ML-D5m">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home" id="d8K-ML-D5m">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home_spinner" translatesAutoresizingMaskIntoConstraints="NO" id="8HH-kP-X5h">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_spinner" id="8HH-kP-X5h">
                                 <rect key="frame" x="86" y="159" width="146" height="146"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="home_overlay" translatesAutoresizingMaskIntoConstraints="NO" id="YIh-HV-Jo0">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_overlay" id="YIh-HV-Jo0">
                                 <rect key="frame" x="-1" y="253" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -125,16 +127,13 @@
         <scene sceneID="EBr-xE-Rg0">
             <objects>
                 <viewController storyboardIdentifier="searchStory" id="oHo-JE-Iyc" customClass="SearchViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yK9-Lh-XWW"/>
-                        <viewControllerLayoutGuide type="bottom" id="iFU-lx-PeD"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bkr-cq-aLt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="search_feed" translatesAutoresizingMaskIntoConstraints="NO" id="Wcu-F1-FS1">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="search_feed" id="Wcu-F1-FS1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                     </view>
@@ -146,64 +145,96 @@
         <!--Compose View Controller-->
         <scene sceneID="jYL-De-n6f">
             <objects>
-                <viewController storyboardIdentifier="composeStory" id="CnG-A6-QRm" customClass="ComposeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cec-LT-N8V"/>
-                        <viewControllerLayoutGuide type="bottom" id="EZn-Tj-IEo"/>
-                    </layoutGuides>
+                <viewController storyboardIdentifier="composeStory" modalPresentationStyle="overFullScreen" id="CnG-A6-QRm" customClass="ComposeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aYm-Xv-3wF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q3p-vl-mo0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="video_icon" translatesAutoresizingMaskIntoConstraints="NO" id="mcW-dE-kka">
-                                        <rect key="frame" x="209" y="277" width="75" height="95"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="chat_icon" translatesAutoresizingMaskIntoConstraints="NO" id="zS2-ix-bFr">
-                                        <rect key="frame" x="116" y="276" width="75" height="96"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="link_icon" translatesAutoresizingMaskIntoConstraints="NO" id="oLm-bl-TEI">
-                                        <rect key="frame" x="28" y="277" width="75" height="95"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="photo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="lVo-8b-zbh">
-                                        <rect key="frame" x="116" y="164" width="75" height="95"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="text_icon" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-IQ-ONz">
-                                        <rect key="frame" x="28" y="164" width="75" height="95"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="quote_icon" translatesAutoresizingMaskIntoConstraints="NO" id="96f-pI-AUm">
-                                        <rect key="frame" x="209" y="163" width="75" height="96"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="nevermind" translatesAutoresizingMaskIntoConstraints="NO" id="bz9-wH-bvi">
-                                        <rect key="frame" x="0.0" y="515" width="320" height="53"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.14901960784313725" green="0.20392156862745098" blue="0.28627450980392155" alpha="0.5" colorSpace="calibratedRGB"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VDJ-s4-lON" userLabel="nevermindButton">
+                                <rect key="frame" x="0.0" y="515" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="nevermind">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapDismiss:" destination="CnG-A6-QRm" eventType="touchUpInside" id="cWh-pE-X61"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oTb-n8-XIp" userLabel="textButton">
+                                <rect key="frame" x="30" y="178" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="text_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Eth-hn-E7t" userLabel="photoButton">
+                                <rect key="frame" x="123" y="178" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="photo_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dp0-aH-Q4E" userLabel="quoteButton">
+                                <rect key="frame" x="215" y="178" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="quote_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ja0-ag-NQp" userLabel="linkButton">
+                                <rect key="frame" x="30" y="294" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="link_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DQi-PV-GPw" userLabel="chatButton">
+                                <rect key="frame" x="123" y="294" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="chat_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Nt6-jK-mNn" userLabel="videoButton">
+                                <rect key="frame" x="215" y="294" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="video_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17647058823529413" green="0.27450980392156865" blue="0.43137254901960786" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="chatButton" destination="DQi-PV-GPw" id="nDA-WO-eSA"/>
+                        <outlet property="linkButton" destination="Ja0-ag-NQp" id="YP6-VZ-w5b"/>
+                        <outlet property="photoButton" destination="Eth-hn-E7t" id="AUD-NC-NG5"/>
+                        <outlet property="quoteButton" destination="dp0-aH-Q4E" id="riD-yr-nrC"/>
+                        <outlet property="textButton" destination="oTb-n8-XIp" id="4Rw-EQ-mnb"/>
+                        <outlet property="videoButton" destination="Nt6-jK-mNn" id="3W3-Tu-Eaf"/>
+                        <outletCollection property="buttons" destination="oTb-n8-XIp" collectionClass="NSMutableArray" id="z9x-bz-hdR"/>
+                        <outletCollection property="buttons" destination="Eth-hn-E7t" collectionClass="NSMutableArray" id="kE6-0s-Lng"/>
+                        <outletCollection property="buttons" destination="dp0-aH-Q4E" collectionClass="NSMutableArray" id="3aI-kX-kEX"/>
+                        <outletCollection property="buttons" destination="Ja0-ag-NQp" collectionClass="NSMutableArray" id="bR0-Oy-Aj3"/>
+                        <outletCollection property="buttons" destination="DQi-PV-GPw" collectionClass="NSMutableArray" id="BkV-Vx-pCU"/>
+                        <outletCollection property="buttons" destination="Nt6-jK-mNn" collectionClass="NSMutableArray" id="cJu-Ab-GcB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPf-nU-csH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="381"/>
+            <point key="canvasLocation" x="72" y="1147"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="hnO-dc-gbk">
             <objects>
                 <viewController storyboardIdentifier="accountStory" id="IKU-3i-gXI" customClass="AccountViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lSO-9S-nHr"/>
-                        <viewControllerLayoutGuide type="bottom" id="yX9-Tk-C2e"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8JD-3s-Pec">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="account" translatesAutoresizingMaskIntoConstraints="NO" id="4H7-Zi-J3M">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="account" id="4H7-Zi-J3M">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,19 +248,17 @@
         <scene sceneID="izS-R5-y7U">
             <objects>
                 <viewController storyboardIdentifier="trendingStory" id="2mG-ou-13M" customClass="TrendingViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zMR-MR-meA"/>
-                        <viewControllerLayoutGuide type="bottom" id="WtG-j4-fZC"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HtS-ui-X4R">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uz1-Rs-2Au">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Uz1-Rs-2Au">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="trending_feed" translatesAutoresizingMaskIntoConstraints="NO" id="6JR-B6-RJR">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="6JR-B6-RJR">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                             </scrollView>

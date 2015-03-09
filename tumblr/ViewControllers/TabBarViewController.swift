@@ -8,7 +8,8 @@
 
 import UIKit
 
-class TabBarViewController: UIViewController {
+class TabBarViewController: UIViewController,
+    UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
     @IBOutlet weak var contentView: UIView!
 
@@ -38,6 +39,8 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var trendingButton: UIButton!
     @IBOutlet weak var customTabBar: UIView!
 
+    var isPresenting: Bool = true
+
     lazy var buttons: [UIButton] = {
         var tempButton: [UIButton] = []
         for view: AnyObject in self.customTabBar.subviews {
@@ -49,6 +52,9 @@ class TabBarViewController: UIViewController {
         return tempButton
     }()
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +63,7 @@ class TabBarViewController: UIViewController {
 
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeStory") as UIViewController
         composeViewController = storyboard.instantiateViewControllerWithIdentifier("composeStory") as UIViewController
+        composeViewController.transitioningDelegate = self
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountStory") as UIViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingStory") as UIViewController
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchStory") as UIViewController
@@ -72,10 +79,7 @@ class TabBarViewController: UIViewController {
 
     @IBAction func didTapNavigationButton(sender: UIButton) {
         deselectAllButtons()
-        sender.selected = true
-
-        var viewController = viewControllers[sender.tag]
-        addViewController(viewController)
+        activeViewController = viewControllers[sender.tag]
     }
 
     func removeViewController(viewController: UIViewController) {
@@ -99,5 +103,50 @@ class TabBarViewController: UIViewController {
         for button in buttons {
             button.selected = false
         }
+    }
+
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return self
+    }
+
+    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+        println("animating")
+        var containerView = transitionContext.containerView()
+        var toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
+        var fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
+
+        if (isPresenting) {
+            println("Is presenting block")
+            containerView.addSubview(toViewController.view)
+            toViewController.view.alpha = 0
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
+                toViewController.view.alpha = 1
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                    self.isPresenting = false
+            }
+        } else {
+            println("fading u")
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: { () -> Void in
+                fromViewController.view.alpha = 0
+                }) { (finished: Bool) -> Void in
+                    transitionContext.completeTransition(true)
+                    fromViewController.view.removeFromSuperview()
+                    self.isPresenting = true
+            }
+        }
+    }
+
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+        return 0.5
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var destinationVC = segue.destinationViewController as UIViewController
+        destinationVC.transitioningDelegate = self
     }
 }
