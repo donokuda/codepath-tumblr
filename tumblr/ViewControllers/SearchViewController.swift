@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var loadingContainerView: UIView!
     @IBOutlet weak var loadingImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +20,18 @@ class SearchViewController: UIViewController {
         let loadingImage2 = UIImage(named: "loading-2")!
         let loadingImage3 = UIImage(named: "loading-3")!
 
+        loadingContainerView.backgroundColor = UIColor.tumblrBgColor()
         loadingImageView.animationImages = [loadingImage1, loadingImage2, loadingImage3]
         loadingImageView.animationDuration = 1.0
         loadingImageView.startAnimating()
+
+        delay(1.0, { () -> () in
+            UIView.animateWithDuration(1, animations: { () -> Void in
+                self.loadingContainerView.alpha = 0
+            }, completion: { completed in
+                self.loadingContainerView.hidden = true
+            })
+        })
     }
 
     override func didReceiveMemoryWarning() {
