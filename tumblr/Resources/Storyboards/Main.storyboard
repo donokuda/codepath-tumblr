@@ -131,12 +131,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="search_feed" id="Wcu-F1-FS1">
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="search_feed" id="Wcu-F1-FS1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="loading-1" id="9ry-vJ-r67">
+                                <rect key="frame" x="130" y="252" width="61" height="19"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="loadingImageView" destination="9ry-vJ-r67" id="pAW-Oe-9bd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hg-Rn-4Xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,7 +210,7 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.17647058823529413" green="0.27450980392156865" blue="0.43137254901960786" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.14509803921568629" green="0.20784313725490197" blue="0.28627450980392155" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="chatButton" destination="DQi-PV-GPw" id="nDA-WO-eSA"/>
@@ -287,6 +294,7 @@
         <image name="home_selected_icon" width="35" height="35"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="loading-1" width="61" height="19"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>

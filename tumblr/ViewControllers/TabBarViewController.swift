@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension UIColor {
+    class func tumblrBgColor() -> UIColor {
+        return UIColor(red: CGFloat(37.0/255.0), green: CGFloat(50.0/255.0), blue: CGFloat(73.0/255.0), alpha: 1)
+    }
+}
+
 class TabBarViewController: UIViewController,
     UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
 
